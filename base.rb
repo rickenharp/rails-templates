@@ -20,4 +20,6 @@ config/database.yml
 db/*.sqlite3
 END
 
+rake "db:migrate"
+
 git :add => ".", :commit => "-m 'initial commit'"
