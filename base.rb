@@ -1,7 +1,15 @@
 if yes?("Do you want to use RSpec for testing?")
   gem "rspec", :lib => false, :version => ">= 1.2.0"
   gem "rspec-rails", :lib => false, :version => ">= 1.2.0"
-  rake("gems:install", :sudo => true)
+  use_rspec = true
+end
+
+gem 'will_paginate', :version => ">= 2.3.11"
+gem 'nifty-generators', :lib => false, :version => ">= 0.3.0"
+
+rake("gems:install", :sudo => true)
+
+if use_rspec == true
   generate :rspec
 end
 
