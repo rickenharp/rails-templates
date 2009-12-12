@@ -1,6 +1,7 @@
 if yes?("Do you want to use RSpec for testing?")
-  plugin "rspec", :git => "git://github.com/dchelimsky/rspec.git"
-  plugin "rspec-rails", :git => "git://github.com/dchelimsky/rspec-rails.git"
+  gem "rspec", :lib => false, :version => ">= 1.2.0"
+  gem "rspec-rails", :lib => false, :version => ">= 1.2.0"
+  rake("gems:install", :sudo => true)
   generate :rspec
 end
 
